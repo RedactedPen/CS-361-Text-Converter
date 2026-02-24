@@ -12,7 +12,39 @@
 #include "big_money_ne.h"
 
 
-#define PORT "55327"
+#define PORT "54325"
+
+
+int char_to_index(char c){
+    if(64 < c && c < 91){
+        return c - 63;
+    }else if(96 < c && c < 123){
+        return c - 95;
+    }else{
+        return 0;
+    }
+}
+
+char* convert(int font, char* text){
+    if(font != 1){
+        return NULL;
+    }
+
+    int len = strlen(text);
+    char* converted = malloc(sizeof(char) * ((BIG_MONEY_NE_HEIGHT * BIG_MONEY_NE_WIDTH + 1) * len));
+    converted[0] = '\0';
+    for(int i = 0; i < BIG_MONEY_NE_HEIGHT; i++){
+        for(int j = 0; j < len; j++){
+            int index = char_to_index(text[j]);
+            strcat(converted, big_money_ne[index][i]);
+        }
+        strcat(converted, "\n");
+    }
+    
+    return converted;
+}
+
+
 
 //Creates the socket for connecting to clients
 //Returns the socket on a success, or a -1 on a failure
@@ -118,6 +150,9 @@ int recieve_message(int socket, char** message){
         }
     }
 
+    char* transmission_end = strstr(peek_text, eot);
+    transmission_end[0] = '\0';
+
     *message = peek_text;
     return 0;
 }
@@ -147,7 +182,6 @@ int transmit(int socket, char* data){
             return -1;
         }
     }
-
     return 0;
 }
 
@@ -177,44 +211,62 @@ int parse_request(char* request, char** text){
     return font_req;
 }
 
-
+//Handles processing and responding to a client's request
 void handle_client(int socket){
     //Get the request that the client is sending
     char* request;
     int result = recieve_message(socket, &request);
     if(result < 0){
+        printf("Failed to recieve data from client\n");
         //Shutdown the socket and exit the function if an error occured
         shutdown(socket, SHUT_RDWR);
         return;
     }
 
+    printf("Recieved request '%s'\n", request);
+
     //Parse the request that was recieved from the client
     char* text;
     int font = parse_request(request, &text);
 
+    //Convert the text as the client requested
+    char* converted_text = convert(font, text);
+
+    //Prepare the text for transmission
+    char eot[2] = {4, '\0'};
+    strcat(converted_text, eot);
+
+    printf("Responding with converted text\n%s\n", converted_text);
+
+    //Reply with the converted text
+    transmit(socket, converted_text);
+
+    free(request);
+    free(converted_text);
+    shutdown(socket, SHUT_RDWR);
 }
 
 
 
 int main(){
+
+
+    //Set up the communication socket
     int socket = create_socket();
     if(socket < 0){
         return 1;
     }
-    for(int i = 0; i < 26; i++){
-        for(int j = 0; j < BIG_MONEY_NE_HEIGHT; j++){
-            printf("%s\n", big_money_ne[i][j]);
-        }
-        printf("\n");
-    }
-
+    
+    printf("Waiting for requests... \n");
     while(1){
     
         //Set up structures to connect to a client
         struct sockaddr_in client_addr;
         socklen_t client_addr_size = sizeof(client_addr);
 
+        //Accept the connection from the client
         int client_socket = accept(socket, (struct sockaddr*) &client_addr, &client_addr_size);
+        printf("Connected to client\n");
 
         //Check that the connection was succesful
         if(client_socket == -1){
@@ -222,6 +274,7 @@ int main(){
             return 1;
         }
 
+        //Process and respond to the client's request
         handle_client(client_socket);
     }
 

@@ -6,7 +6,7 @@
 
 //Font sourced from https://patorjk.com/
 
-char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
+char big_money_ne[28][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     {
         "          ",
         "          ",
@@ -16,13 +16,25 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
         "          ",
         "          ",
         "          ",
-        "          ",
+        "          "
     },
-    
+
     {
+        "\n\n\n\n\n\n\n\n\n",
+        "",
+        "",
+        " ",
         "",
         "",
         "",
+        "",
+        "",
+    },
+
+    {
+        "          ",
+        "          ",
+        "          ",
         "  /$$$$$$ ",
         " |____  $$",
         "  /$$$$$$$",
@@ -32,7 +44,7 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
     
     {
-        "",
+        "           ",
         "/$$        ",          
         "| $$       ",          
         "| $$$$$$$  ",     
@@ -43,10 +55,10 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
         "|_______/  "
     },
     
-    {
-        "",
-        "",
-        "",
+    { 
+        "          ",
+        "          ",
+        "          ",
         "  /$$$$$$$",    
         " /$$_____/",    
         "| $$      ",          
@@ -56,7 +68,7 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
     
     {
-        "",
+        "          ",
         "       /$$",    
         "      | $$",    
         "  /$$$$$$$",    
@@ -68,9 +80,9 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
     
     {
-        "",
-        "",
-        "",
+        "           ",
+        "           ",
+        "           ",
         "  /$$$$$$  ",    
         " /$$__  $$ ",   
         "| $$$$$$$$ ",    
@@ -80,7 +92,7 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
     
     {
-        "",
+        "          ",
         "  /$$$$$$ ",    
         " /$$__  $$",  
         "| $$  \\__/",    
@@ -94,7 +106,7 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     {
         "  /$$$$$$ ",     
         " /$$__  $$",    
-        "| $$  \\ $$",    
+        "| $$ \\  $$",    
         "| $$  | $$",    
         "|  $$$$$$$",    
         " \\____  $$",    
@@ -103,8 +115,8 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
         " \\______/ "
     },
     
-    {
-        "",
+    { 
+        "          ",
         "/$$       ",          
         "| $$      ",          
         "| $$$$$$$ ",     
@@ -116,7 +128,7 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
     
     {
-        "",
+        "    ",
         " /$$",          
         "|__/",          
         " /$$",          
@@ -140,7 +152,7 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
     
     {
-        "",
+        "          ",
         " /$$      ",          
         "| $$      ",          
         "| $$   /$$",    
@@ -152,7 +164,7 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
     
     {
-        "",
+        "    ",
         "/$$ ",          
         "| $$",          
         "| $$",         
@@ -164,9 +176,9 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
     
     {
-        "",
-        "",
-        "",
+        "              ",
+        "              ",
+        "              ",
         "/$$$$$$/$$$$  ", 
         "| $$_  $$_  $$",
         "| $$ \\ $$ \\ $$",
@@ -176,9 +188,9 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
     
     {
-        "",
-        "",
-        "",
+        "          ",
+        "          ",
+        "          ",
         " /$$$$$$$ ",     
         "| $$__  $$",    
         "| $$  \\ $$",   
@@ -188,8 +200,9 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
     
     {
-         "",
-        "",
+        "          ",
+        "          ",
+        "          ",
         "  /$$$$$$ ",     
         " /$$__  $$",    
         "| $$  \\ $$",   
@@ -223,9 +236,9 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
     
     {
-        "",
-        "",
-        "",
+        "          ",
+        "          ",
+        "          ",
         "  /$$$$$$ ",     
         " /$$__  $$",    
         "| $$  \\__/",    
@@ -235,9 +248,9 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
     
     {
-        "",
-        "",
-        "",
+        "          ",
+        "          ",
+        "          ",
         " /$$$$$$$ ",    
         " /$$_____/",    
         "|  $$$$$$ ",     
@@ -247,7 +260,7 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
     
     {
-        "",
+        "          ",
         "   /$$    ",        
         "  | $$    ",        
         " /$$$$$$  ",      
@@ -259,9 +272,9 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
     
     {
-        "",
-        "",
-        "",
+        "          ",
+        "          ",
+        "          ",
         " /$$   /$$",    
         "| $$  | $$",    
         "| $$  | $$",    
@@ -271,9 +284,9 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
     
     {
-        "",
-        "",
-        "",
+        "           ",
+        "           ",
+        "           ",
         " /$$    /$$",   
         "|  $$  /$$/",   
         " \\  $$/$$/ ",    
@@ -283,9 +296,9 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
     
     {
-        "",
-        "",
-        "",
+        "              ",
+        "              ",
+        "              ",
         " /$$  /$$  /$$",
         "| $$ | $$ | $$",
         "| $$ | $$ | $$",
@@ -295,9 +308,9 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
 
     {
-        "",
-        "",
-        "",
+        "           ",
+        "           ",
+        "           ",
         " /$$   /$$ ",    
         "|  $$ /$$/ ",    
         " \\  $$$$/  ",     
@@ -319,9 +332,9 @@ char big_money_ne[27][BIG_MONEY_NE_HEIGHT][BIG_MONEY_NE_WIDTH] = {
     },
 
     {
-        "",
-        "",
-        "",
+        "          ",
+        "          ",
+        "          ",
         " /$$$$$$$$",    
         "|____ /$$/",    
         "   /$$$$/ ",    
