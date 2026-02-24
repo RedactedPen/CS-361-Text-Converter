@@ -3,7 +3,7 @@ Microservice for the Winter 2026 Ecampus CS361 group project assignment.
 
 ## Overview
 
-The microservice listens on 'localhost:54325' using TCP. Clients then connet, send request strings, and recieve back the converted ASCII art.
+The microservice listens on 'localhost:54325' using TCP. Clients then connect, send request strings, and recieve back the converted ASCII art.
 
 ### Request Format
 
